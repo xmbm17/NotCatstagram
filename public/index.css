@@ -103,7 +103,7 @@ button {
   color: #171821;
 }
 
-.navbar{
+/* .navbar{
   display: flex;
   justify-content: space-between;
   background-color: #27374D;
@@ -120,15 +120,15 @@ button {
   margin-top: 20px;
 
 
-}
+} */
 
-.navbar > a:hover {
+/* .navbar > a:hover {
   color: red;
   text-decoration: underline;
   border: 1px solid red;
   padding: 3px 5px;
 
-}
+} */
 .fade-in {
   opacity: 0;
   transition: opacity 3s ease-in;
@@ -137,3 +137,43 @@ button {
 .fade-in.active {
   opacity: 1;
 }
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  background-color: #7B8FA1;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.navbar > a {
+  text-decoration: none;
+  padding: 3px 5px;
+  border: 1px solid #5f6975;
+  color: black;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.navbar > a:hover {
+  color: black;
+  text-decoration: underline;
+  border: 1px solid black;
+  padding: 3px 5px;
+
+}
+
+#likesDiv1{
+  justify-content: center;
+  align-items: center;
+}
+#commentsDiv12{
+  background-color: #27374D;
+  width: 200px;
+  height: 200px;
+}
+/*
+navbar color :#080809;
+
+navbar a : textcolor white smoke
+h1: whitesmoke
+ */

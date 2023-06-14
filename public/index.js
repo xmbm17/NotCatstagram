@@ -49,7 +49,7 @@ input.addEventListener("keyup", async () => {
 
 button.addEventListener("click", getResults = async () => {
   if (input.value.trim().length < 1) {
-    alert("Input cannot be blank");
+    // alert("Input cannot be blank");
     return;
   }
 
@@ -74,6 +74,9 @@ button.addEventListener("click", getResults = async () => {
       </div>
       <div class="character-name">${element.name}</div>
       <div class="character-description">${element.description}</div>
+      <div class="comments">
+      <button class="add-comment-button">Add Comment</button>
+      </div>
     `;
 
     showContainer.appendChild(div);
@@ -86,10 +89,55 @@ button.addEventListener("click", getResults = async () => {
     setTimeout(() => {
       div.classList.add("active");
     }, 100);
+
+    // LIKES PART
+    const likesDiv = document.createElement('div')
+    likesDiv.setAttribute('id', 'likesDiv1')
+
+    const likesButt = document.createElement('button')
+    const dislikeButt = document.createElement('button')
+    const nameContainer = document.querySelector(".character-name")
+    nameContainer.append(likesDiv)
+
+
+    likesDiv.append(likesButt,dislikeButt)
+    likesDiv.style.display = 'flex'
+    likesButt.innerText = "like me"
+    dislikeButt.innerText = ' dislike me'
+
+    // COMMENTS PART
+    // const characterDesc = document.querySelector('.character-description')
+    // const commentDropDiv = document.createElement('div')
+    // characterDesc.append(commentDropDiv);
+    // const commentButt = document.createElement('button')
+
+    // commentDropDiv.append(commentButt)
+    // commentButt.innerText = 'arrowIcon'
+    const cD = document.querySelector('.comments12')
+    const commentArrow = document.querySelector('.add-comment-button')
+
+    commentArrow.addEventListener('click', e=>{
+      const div = document.createElement('div')
+      div.setAttribute('id', 'commentsDiv12')
+      const textAreaC = document.createElement('textarea')
+      const submitButt = document.createElement('button')
+      const ulC = document.createElement('ul')
+      cD.append(div)
+      div.append(textAreaC,submitButt,ulC)
+
+      textAreaC.setAttribute('rows', "4");
+      textAreaC.setAttribute('placeholder', "Enter your own ");
+      console.log("WORKS")
+
+
+
+    })
+
+
   });
 });
 
 
 window.onload = () => {
-  getRsult();
+  getResults();
 };

@@ -13,8 +13,9 @@ body {
   width: 90%;
   max-width: 500px;
   margin: 0 auto;
+  margin-top: 60px;
   padding: 3em 2em;
-  position: absolute;
+  position:absolute;
   transform: translateX(-50%);
   left: 50%;
   right: 50%;
@@ -33,6 +34,7 @@ input {
   border: none;
   border-radius: 0.5em;
   outline: none;
+
 }
 button {
   outline: none;
@@ -43,6 +45,7 @@ button {
 }
 .display-container {
   padding: 1em;
+
 }
 .container-character-image {
   background-color: #ffffff;
@@ -52,6 +55,7 @@ button {
   display: block;
   margin: auto;
   border-radius: 50%;
+  /* transition: 2s; */
 }
 .container-character-image img {
   width: 100%;
@@ -72,6 +76,7 @@ button {
   color: #a0a0a6;
   line-height: 2em;
   font-weight: 300;
+  /* transition: 2s; */
 }
 .list {
   position: absolute;
@@ -86,4 +91,33 @@ button {
 .autocomplete-items:hover {
   background-color: #ddd;
   color: #171821;
+}
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  background-color: whitesmoke;
+}
+
+.navbar > a {
+  text-decoration: none;
+  color: black;
+  margin-bottom: 20px;
+  margin-top: 20px;
+
+}
+
+.navbar > a:hover {
+  color: red;
+  text-decoration: underline;
+  border: 1px solid red;
+  padding: 3px 5px;
+}
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.fade-in.active {
+  opacity: 1;
 }

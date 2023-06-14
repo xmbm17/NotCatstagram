@@ -69,29 +69,38 @@ input.addEventListener("keyup", async () => {
   });
 });
 
-button.addEventListener(
-  "click",
-  (getRsult = async () => {
-    if (input.value.trim().length < 1) {
-      alert("Input cannot be blank");
-    }
-    showContainer.innerHTML = "";
-    const url = `https://gateway.marvel.com:443/v1/public/characters?ts=${timestamp}&apikey=${apiKey}&hash=${hashValue}&name=${input.value}`;
+button.addEventListener("click", getResults = async () => {
+  if (input.value.trim().length < 1) {
+    alert("Input cannot be blank");
+    return;
+  }
 
-    const response = await fetch(url);
-    const jsonData = await response.json();
-    jsonData.data["results"].forEach((element) => {
-      showContainer.innerHTML = `<div class="card-container">
-        <div class="container-character-image">
-        <img src="${
-          element.thumbnail["path"] + "." + element.thumbnail["extension"]
-        }"/></div>
-        <div class="character-name">${element.name}</div>
-        <div class="character-description">${element.description}</div>
-        </div>`;
-    });
-  })
-);
+  showContainer.innerHTML = "";
+  const url = `https://gateway.marvel.com:443/v1/public/characters?ts=${timestamp}&apikey=${apiKey}&hash=${hashValue}&name=${input.value}`;
+
+  const response = await fetch(url);
+  const jsonData = await response.json();
+  const container = document.querySelector('.container');
+  container.style.transition// WANNA BE TRANSITION
+  jsonData.data["results"].forEach((element) => {
+    const div = document.createElement("div");
+    div.classList.add("card-container", "fade-in"); // Add "fade-in" class
+    div.innerHTML = `
+      <div class="container-character-image">
+        <img src="${element.thumbnail["path"] + "." + element.thumbnail["extension"]}"/>
+      </div>
+      <div class="character-name">${element.name}</div>
+      <div class="character-description">${element.description}</div>
+    `;
+
+    showContainer.appendChild(div);
+
+    // Trigger the transition by adding the "active" class after a short delay
+    setTimeout(() => {
+      div.classList.add("active");
+    }, 100);
+  });
+});
 window.onload = () => {
   getRsult();
 };

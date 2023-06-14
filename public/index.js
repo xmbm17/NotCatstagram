@@ -28,6 +28,7 @@ input.addEventListener("keyup", async () => {
     return false;
   }
 
+
   const url = `https://gateway.marvel.com:443/v1/public/characters?ts=${timestamp}&apikey=${apiKey}&hash=${hashValue}&nameStartsWith=${input.value}`;
 
   const response = await fetch(url);
@@ -51,6 +52,7 @@ button.addEventListener("click", getResults = async () => {
     alert("Input cannot be blank");
     return;
   }
+
 
   showContainer.innerHTML = "";
   const url = `https://gateway.marvel.com:443/v1/public/characters?ts=${timestamp}&apikey=${apiKey}&hash=${hashValue}&name=${input.value}`;
@@ -86,6 +88,8 @@ button.addEventListener("click", getResults = async () => {
     }, 100);
   });
 });
+
+
 window.onload = () => {
   getRsult();
 };

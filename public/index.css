@@ -5,11 +5,11 @@
   font-family: "Poppins", sans-serif;
 }
 body {
-  background-image: url("https://d23.com/app/uploads/2022/09/Marvel-Pattern-Banner.jpg");
+  background-image: url("./imgs/Untitled\ design.png");
   background-color: #e01a38;
 }
 .container {
-  background-color: #171821;
+  background-color: #27374D;
   width: 90%;
   max-width: 500px;
   margin: 0 auto;
@@ -106,7 +106,7 @@ button {
 .navbar{
   display: flex;
   justify-content: space-between;
-  background-color: whitesmoke;
+  background-color: #27374D;
   border: none;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }

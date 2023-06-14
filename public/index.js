@@ -1,30 +1,7 @@
 let ts = "1686691583969";
 let publicKey = "9fa901025efdc47b9023c5561ac7e0fb";
 let hashVal = "82db15dcd1a058d07072328808772db9";
-// function getRandomInt(max) {
-//   return Math.floor(Math.random() * Math.floor(max));
-// }
 
-// window.onload = async() =>{
-
-//   let date = new Date();
-// // console.log(date.getTime());
-// const [timestamp, apiKey, hashValue] = [ts, publicKey, hashVal];
-//   const url = `https://gateway.marvel.com:443/v1/public/characters?limit=100&ts=${timestamp}&apikey=${apiKey}&hash=${hashValue}`;
-//   const url2 = `https://gateway.marvel.com:443/v1/public/characters?limit=100&offset=100&ts=${timestamp}&apikey=${apiKey}&hash=${hashValue}`
-//   const response = await fetch(url);
-//   const jsonData = await response.json();
-
-//   const res2 = await fetch(url2);
-//   const jsonData2 = await res2.json();
-//   console.log(jsonData.data)
-//   console.log(jsonData2.data)
-//   // const results = jsonData.data.results
-//   // const randomizedResults = results.sort(() => getRandomInt(2) - 0.5);
-//   // console.log(jsonData.data.limit = 1000)
-//   // console.log(jsonData.data.count = 1000)
-//   // console.log(randomizedResults)
-// }
 
 let input = document.getElementById("input-box");
 let button = document.getElementById("submit-button");
@@ -80,8 +57,12 @@ button.addEventListener("click", getResults = async () => {
 
   const response = await fetch(url);
   const jsonData = await response.json();
-  const container = document.querySelector('.container');
-  container.style.transition// WANNA BE TRANSITION
+  // const container = document.querySelector('.container');
+  // container.style.transition//
+  const container = document.querySelector(".container");
+  container.style.animation = "rotateBackground 2s ease";
+
+
   jsonData.data["results"].forEach((element) => {
     const div = document.createElement("div");
     div.classList.add("card-container", "fade-in"); // Add "fade-in" class
@@ -94,6 +75,10 @@ button.addEventListener("click", getResults = async () => {
     `;
 
     showContainer.appendChild(div);
+
+    setTimeout(() => {
+      container.style.animation = "";
+    }, 2000);
 
     // Trigger the transition by adding the "active" class after a short delay
     setTimeout(() => {

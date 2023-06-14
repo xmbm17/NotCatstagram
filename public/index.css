@@ -15,13 +15,23 @@ body {
   margin: 0 auto;
   margin-top: 60px;
   padding: 3em 2em;
-  position:absolute;
-  transform: translateX(-50%);
   left: 50%;
   right: 50%;
   top: 1em;
   border-radius: 1em;
+  /* transition: transform 0.2s ease-in-out; */
 }
+
+
+@keyframes rotateBackground {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .input-container {
   display: grid;
   grid-template-columns: 9fr 3fr;
@@ -97,13 +107,18 @@ button {
   display: flex;
   justify-content: space-between;
   background-color: whitesmoke;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .navbar > a {
   text-decoration: none;
+  padding: 3px 5px;
+  border: 1px solid whitesmoke;
   color: black;
   margin-bottom: 20px;
   margin-top: 20px;
+
 
 }
 
@@ -112,10 +127,11 @@ button {
   text-decoration: underline;
   border: 1px solid red;
   padding: 3px 5px;
+
 }
 .fade-in {
   opacity: 0;
-  transition: opacity 1s ease-in;
+  transition: opacity 3s ease-in;
 }
 
 .fade-in.active {

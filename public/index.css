@@ -319,7 +319,7 @@ button {
   font-weight: 500;
   line-height: 2.5;
   outline: transparent;
-  padding: 0 1rem;
+  padding: 0px 1px;
   text-align: center;
   text-decoration: none;
   transition: box-shadow .2s ease-in-out;
@@ -357,7 +357,7 @@ padding: 2px 20px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2),
   0 4px 8px rgba(0, 0, 0, 0.4),
   0 2px 4px rgba(0, 0, 0, 0.6);
-margin-top: -90px;
+margin-top: -10px;
 margin-bottom: -20px;
 border-radius: 0.5rem;
 

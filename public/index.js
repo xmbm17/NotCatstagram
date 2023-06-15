@@ -135,16 +135,19 @@ button.addEventListener("click", getResults = async () => {
     likesButt.addEventListener('click' ,e =>{
       likesCounter++
       countNum.innerText= likesCounter
+      localStorage.setItem('likes', likesCounter)
     })
     dislikeButt.addEventListener('click', e =>{
       dislikeCounter++
       dislikeNum.innerText = dislikeCounter
+      localStorage.setItem('dislikes', dislikeCounter)
     })
 
     likesDiv.append(countNum,likesButt,dislikeButt,dislikeNum)
     likesDiv.style.display = 'flex'
     likesButt.innerHTML = "<i class= like-img><img src=./imgs/like.png> </i>"
-      dislikeButt.innerHTML = "<i class= dislike-img><img src=./imgs/dislike.png> </i>"
+    dislikeButt.innerHTML = "<i class= dislike-img><img src=./imgs/dislike.png> </i>"
+
 
     // COMMENTS PART
     // const characterDesc = document.querySelector('.character-description')
@@ -187,6 +190,14 @@ button.addEventListener("click", getResults = async () => {
         submitButt.setAttribute('type', 'button')
         submitButt.innerText = 'SUBMIT COMMENT'
 
+        const saveComment = commentText => {
+
+          const existingComments = JSON.parse(localStorage.getItem('comments')) || [];
+
+          existingComments.push(commentText);
+
+          localStorage.setItem('comments', JSON.stringify(existingComments));
+      };
         submitButt.addEventListener('click', e =>{
           // const newDiv = document.createElement('div')
           // newDiv.setAttribute('id', 'submitDiv')
@@ -196,7 +207,7 @@ button.addEventListener("click", getResults = async () => {
           li.innerText = inputC.value;
 
           ulC.append(li)
-
+          saveComment(inputC.value)
         })
 
         const ulC = document.createElement('ul');
@@ -217,7 +228,9 @@ button.addEventListener("click", getResults = async () => {
 
   });
 
-
+  localStorage.removeItem('likes')
+  localStorage.removeItem('dislikes')
+  localStorage.removeItem('comments')
 });
 
 

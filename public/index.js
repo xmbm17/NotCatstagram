@@ -9,7 +9,7 @@ const lightDarkButton = document.getElementById("lightDark");
   }
 
   const initialBackgroundImage = getComputedStyle(document.body).getPropertyValue("background-image");
-  if (initialBackgroundImage === 'url("https://d23.com/app/uploads/2022/09/Marvel-Pattern-Banner.jpg")') {
+  if (initialBackgroundImage === 'url("./imgs/b492a1a6-aaaf-4c91-accf-31a93652f61b_1.jpg")') {
     document.body.classList.add("light-mode");
   } else {
     document.body.classList.add("dark-mode");
@@ -154,32 +154,65 @@ button.addEventListener("click", getResults = async () => {
 
     // commentDropDiv.append(commentButt)
     // commentButt.innerText = 'arrowIcon'
-    const cD = document.querySelector('.comments12')
+    // const cD = document.querySelector('.comments12')
+    // cD.style.display = 'flex'
+    // cD.style.justifyContent = 'center'
+
     const commentArrow = document.querySelector('.add-comment-button')
+    const body = document.querySelector('body')
+
 
     commentArrow.addEventListener('click', handleClick);
 
       function handleClick(e) {
+        const cD = document.createElement('div')
+        body.append(cD)
+        cD.setAttribute('class', 'comments12')
+        cD.style.display = 'flex'
+        cD.style.justifyContent = 'center'
+
         const div = document.createElement('div');
         div.setAttribute('id', 'commentsDiv12');
-        const textAreaC = document.createElement('textarea');
+
+        const testDiv = document.createElement('div')
+        testDiv.setAttribute('id', 'tester-id')
+
+
+
+        const inputC = document.createElement('input');
+        inputC.setAttribute('class','comIn' )
 
         const submitButt = document.createElement('button');
         submitButt.setAttribute('id', 'comment-submit')
         submitButt.setAttribute('type', 'button')
         submitButt.innerText = 'SUBMIT COMMENT'
 
+        submitButt.addEventListener('click', e =>{
+          // const newDiv = document.createElement('div')
+          // newDiv.setAttribute('id', 'submitDiv')
+          let li = document.createElement('li')
+          li.setAttribute('class', 'comment-list')
+
+          li.innerText = inputC.value;
+
+          ulC.append(li)
+
+        })
+
         const ulC = document.createElement('ul');
+        testDiv.append(ulC)
 
-        cD.append(div);
-        div.append(textAreaC, submitButt, ulC);
+        cD.append(div, testDiv);
+        div.append(inputC, submitButt);
+        // let secondDiv = document.querySelector('#commentsDiv12')
+        // secondDiv.appendChild(ulC)
 
-        textAreaC.setAttribute('rows', '4');
-        textAreaC.setAttribute('placeholder', 'Enter your own ');
+        // textAreaC.setAttribute('rows', '4');
+        inputC.setAttribute('placeholder', 'Enter your own ');
         console.log('WORKS');
 
         commentArrow.removeEventListener('click', handleClick);
-      }
+      };
 
 
   });

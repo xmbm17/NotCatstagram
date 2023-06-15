@@ -11,14 +11,15 @@ body {
 }
 
 .light-mode {
-  background-image: url("https://d23.com/app/uploads/2022/09/Marvel-Pattern-Banner.jpg");
+  background-image: url("./imgs/b492a1a6-aaaf-4c91-accf-31a93652f61b_1.jpg");
   background-color: #e01a38;
+
 }
 
 .dark-mode {
-  background-image: url("./imgs/darkmode.png");
+  background-image: url("./imgs/20f4ceb1-bf80-4abb-8522-6d547d6b262b.jpg");
 
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   background-color: #27374D;
 }
 
@@ -65,7 +66,7 @@ body {
   grid-template-columns: 9fr 3fr;
   gap: 1em;
 }
-input {
+input, .comIn {
   padding: 1em 0.5em;
   background-color: #3a3939;
   color: #ffffff;
@@ -246,8 +247,9 @@ button {
   height: 25px;
 }
 #commentsDiv12{
-  background-color: #27374D;
-  width: 200px;
+  display: flex;
+   background-color: #27374D;
+  width: 400px;
   height: 200px;
 }
 #dislike-butt{
@@ -264,9 +266,99 @@ button {
 
   box-shadow: 0 5px 10px rgb(160, 157, 157);
 }
-/*
-navbar color :#080809;
+.comments12{
+  flex-direction: column;
+  background-color:#27374D;
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 10px;
+  padding: 3em 2em;
+  left: 50%;
+  right: 50%;
+  top: 1em;
+  border-radius: 1em;
+}
+.add-comment-button:focus + .comments12 {
+  display: block;
+}
+.add-comment-button {
+  background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+  border: 0;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  margin-top: 20px;
+  margin-left: 300px;
+  width: 100px;
+  height: 30px;
+}
+#comment-submit{
+  background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+  border: 0;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 8px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  margin-top: 30px;
+  margin-left: 5px;
+  width: 100px;
+  height: 30px;
+}
+.add-comment-button:not([disabled]):focus, #comment-submit:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
 
-navbar a : textcolor white smoke
-h1: whitesmoke
- */
+.add-comment-button:not([disabled]):hover, #comment-submit:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+.comIn {
+  padding: 1em 0.5em;
+  background-color: #3a3939;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5em;
+  outline: none;
+ width: 300px;
+ height: 100px;
+}
+#tester-id{
+  /* margin-left: 40px; */
+
+padding: 2px 20px;
+  background-color: #b1bad8;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2),
+  0 4px 8px rgba(0, 0, 0, 0.4),
+  0 2px 4px rgba(0, 0, 0, 0.6);
+margin-top: -90px;
+margin-bottom: -20px;
+border-radius: 0.5rem;
+
+}

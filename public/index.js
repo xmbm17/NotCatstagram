@@ -117,6 +117,7 @@ button.addEventListener("click", getResults = async () => {
 
     const likesButt = document.createElement('button')
     likesButt.setAttribute('type', "button")
+    likesButt.setAttribute('id', 'like-butt')
     likesButt.style.cursor = 'pointer'
 
     let dislikeCounter = 0;
@@ -125,6 +126,7 @@ button.addEventListener("click", getResults = async () => {
 
     const dislikeButt = document.createElement('button')
     dislikeButt.setAttribute('type', "button")
+    dislikeButt.setAttribute('id', 'dislike-butt')
     dislikeButt.style.cursor = 'pointer'
 
     const nameContainer = document.querySelector(".character-name")
@@ -141,8 +143,8 @@ button.addEventListener("click", getResults = async () => {
 
     likesDiv.append(countNum,likesButt,dislikeButt,dislikeNum)
     likesDiv.style.display = 'flex'
-    likesButt.innerText = "like me"
-    dislikeButt.innerText = ' dislike me'
+    likesButt.innerHTML = "<i class= like-img><img src=./imgs/like.png> </i>"
+      dislikeButt.innerHTML = "<i class= dislike-img><img src=./imgs/dislike.png> </i>"
 
     // COMMENTS PART
     // const characterDesc = document.querySelector('.character-description')
@@ -155,22 +157,29 @@ button.addEventListener("click", getResults = async () => {
     const cD = document.querySelector('.comments12')
     const commentArrow = document.querySelector('.add-comment-button')
 
-    commentArrow.addEventListener('click', e=>{
-      const div = document.createElement('div')
-      div.setAttribute('id', 'commentsDiv12')
-      const textAreaC = document.createElement('textarea')
-      const submitButt = document.createElement('button')
-      const ulC = document.createElement('ul')
-      cD.append(div)
-      div.append(textAreaC,submitButt,ulC)
+    commentArrow.addEventListener('click', handleClick);
 
-      textAreaC.setAttribute('rows', "4");
-      textAreaC.setAttribute('placeholder', "Enter your own ");
-      console.log("WORKS")
+      function handleClick(e) {
+        const div = document.createElement('div');
+        div.setAttribute('id', 'commentsDiv12');
+        const textAreaC = document.createElement('textarea');
 
+        const submitButt = document.createElement('button');
+        submitButt.setAttribute('id', 'comment-submit')
+        submitButt.setAttribute('type', 'button')
+        submitButt.innerText = 'SUBMIT COMMENT'
 
+        const ulC = document.createElement('ul');
 
-    })
+        cD.append(div);
+        div.append(textAreaC, submitButt, ulC);
+
+        textAreaC.setAttribute('rows', '4');
+        textAreaC.setAttribute('placeholder', 'Enter your own ');
+        console.log('WORKS');
+
+        commentArrow.removeEventListener('click', handleClick);
+      }
 
 
   });

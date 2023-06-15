@@ -16,7 +16,9 @@ body {
 }
 
 .dark-mode {
-  background-image: url("./imgs/Untitled design.png");
+  background-image: url("./imgs/darkmode.png");
+
+  background-repeat: no-repeat;
   background-color: #27374D;
 }
 
@@ -225,11 +227,42 @@ button {
 #likesDiv1{
   justify-content: center;
   align-items: center;
+  gap: 10px;
+}
+#like-butt{
+  background-color: transparent;
+}
+
+.like-img :hover{
+  /* border: 1px solid white ; */
+  border-radius: 20%;
+
+  box-shadow: 0 5px 10px rgb(160, 157, 157);
+}
+
+.like-img > img{
+
+  width: 25px;
+  height: 25px;
 }
 #commentsDiv12{
   background-color: #27374D;
   width: 200px;
   height: 200px;
+}
+#dislike-butt{
+
+  background-color: transparent;
+}
+.dislike-img >img{
+  width: 25px;
+  height: 25px;
+  /* padding-top: 3px; */
+}
+.dislike-img :hover{
+  border-radius: 20%;
+
+  box-shadow: 0 5px 10px rgb(160, 157, 157);
 }
 /*
 navbar color :#080809;

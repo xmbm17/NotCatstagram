@@ -111,13 +111,35 @@ button.addEventListener("click", getResults = async () => {
     const likesDiv = document.createElement('div')
     likesDiv.setAttribute('id', 'likesDiv1')
 
+    let likesCounter = 0;
+    let countNum = document.createElement('div')
+    countNum.innerText= likesCounter
+
     const likesButt = document.createElement('button')
+    likesButt.setAttribute('type', "button")
+    likesButt.style.cursor = 'pointer'
+
+    let dislikeCounter = 0;
+    let dislikeNum = document.createElement('div')
+    dislikeNum.innerText = dislikeCounter
+
     const dislikeButt = document.createElement('button')
+    dislikeButt.setAttribute('type', "button")
+    dislikeButt.style.cursor = 'pointer'
+
     const nameContainer = document.querySelector(".character-name")
     nameContainer.append(likesDiv)
 
+    likesButt.addEventListener('click' ,e =>{
+      likesCounter++
+      countNum.innerText= likesCounter
+    })
+    dislikeButt.addEventListener('click', e =>{
+      dislikeCounter++
+      dislikeNum.innerText = dislikeCounter
+    })
 
-    likesDiv.append(likesButt,dislikeButt)
+    likesDiv.append(countNum,likesButt,dislikeButt,dislikeNum)
     likesDiv.style.display = 'flex'
     likesButt.innerText = "like me"
     dislikeButt.innerText = ' dislike me'

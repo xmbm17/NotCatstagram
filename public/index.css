@@ -5,9 +5,35 @@
   font-family: "Poppins", sans-serif;
 }
 body {
-  background-image: url("./imgs/Untitled\ design.png");
+  /* background-image: url("./imgs/Untitled design.png"); */
+  background-color: #e01a38;
+  transition: background-color 0.5s ease;
+}
+
+.light-mode {
+  background-image: url("https://d23.com/app/uploads/2022/09/Marvel-Pattern-Banner.jpg");
   background-color: #e01a38;
 }
+
+.dark-mode {
+  background-image: url("./imgs/Untitled design.png");
+  background-color: #27374D;
+}
+
+
+
+.light-mode #lightDark {
+  color: #000000;
+  background-color: whitesmoke;
+  border: 0.5px solid black;
+}
+
+.dark-mode #lightDark {
+  color: #ffffff;
+  background-color: #212121;
+  border: 0.5px solid white;
+}
+
 .container {
   background-color: #27374D;
   width: 90%;
@@ -142,24 +168,58 @@ button {
   justify-content: space-between;
   background-color: #7B8FA1;
   border: none;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+.navbar #lightDark {
+  padding: 0.5em;
+  /* background-color: transparent; */
+  cursor: pointer;
+}
+
+.navbar #lightDark:hover {
+  opacity: 0.5;
+
+
+}
+
+.navbar #lightDark img {
+  width: 20px;
+  height: 20px;
+}
+
+.light-mode #lightDark img {
+  filter: invert(1);
 }
 
 .navbar > a {
   text-decoration: none;
   padding: 3px 5px;
   border: 1px solid #5f6975;
-  color: black;
+  color: lightslategray;
   margin-bottom: 20px;
   margin-top: 20px;
+  border-radius: 20%;
 }
 
 .navbar > a:hover {
-  color: black;
+  color: lightslategray;
   text-decoration: underline;
   border: 1px solid black;
   padding: 3px 5px;
+  border-radius: 4rem;
+  opacity: 0.5;
 
+}
+
+.light-mode .navbar {
+  background-color: whitesmoke;
+  color: black;
+}
+
+.dark-mode .navbar {
+  background-color: #212121;
+  color: lightslategray;
 }
 
 #likesDiv1{

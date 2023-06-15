@@ -1,3 +1,20 @@
+//light dark mode
+const lightDarkButton = document.getElementById("lightDark");
+
+  lightDarkButton.addEventListener("click", toggleLightDarkMode);
+
+  function toggleLightDarkMode() {
+    document.body.classList.toggle("light-mode");
+    document.body.classList.toggle("dark-mode");
+  }
+
+  const initialBackgroundImage = getComputedStyle(document.body).getPropertyValue("background-image");
+  if (initialBackgroundImage === 'url("https://d23.com/app/uploads/2022/09/Marvel-Pattern-Banner.jpg")') {
+    document.body.classList.add("light-mode");
+  } else {
+    document.body.classList.add("dark-mode");
+  }
+
 let ts = "1686691583969";
 let publicKey = "9fa901025efdc47b9023c5561ac7e0fb";
 let hashVal = "82db15dcd1a058d07072328808772db9";
@@ -135,6 +152,8 @@ button.addEventListener("click", getResults = async () => {
 
 
   });
+
+
 });
 
 
